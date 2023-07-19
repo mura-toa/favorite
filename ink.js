@@ -27,5 +27,5 @@ clickableDiv.addEventListener("click", function(event) {
     circle.style.left = x - 50 + "px";
     circle.style.top = y - 50 + "px";
 
-    document.body.appendChild(circle);
+    document.splatoon.appendChild(circle);
 });
