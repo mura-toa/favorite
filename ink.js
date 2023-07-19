@@ -11,25 +11,21 @@ const color = randomcolor;
 var clickableDiv = document.querySelector(".splatoon");
   
 clickableDiv.addEventListener("click", function(event) {
-    var body = document.body;
+    var x = event.clientX;
+    var y = event.clientY;
+    var circle = document.createElement("div");
+    var min = 60;
+    var max = 80;
+    var w = Math.floor(Math.random() * (max - min + 1)) + min;
+    var h = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    body.addEventListener("click", function(event) {
-        var x = event.clientX;
-        var y = event.clientY;
-        var circle = document.createElement("div");
-        var min = 60;
-        var max = 80;
-        var w = Math.floor(Math.random() * (max - min + 1)) + min;
-        var h = Math.floor(Math.random() * (max - min + 1)) + min;
+    circle.style.width = w + "px";
+    circle.style.height = h + "px";
+    circle.style.borderRadius = "50%";
+    circle.style.backgroundColor = color;
+    circle.style.position = "absolute";
+    circle.style.left = x - 50 + "px";
+    circle.style.top = y - 50 + "px";
 
-        circle.style.width = w + "px";
-        circle.style.height = h + "px";
-        circle.style.borderRadius = "50%";
-        circle.style.backgroundColor = color;
-        circle.style.position = "absolute";
-        circle.style.left = x - 50 + "px";
-        circle.style.top = y - 50 + "px";
-        
-        document.body.appendChild(circle);
-    });
+    document.body.appendChild(circle);
 });
