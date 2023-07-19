@@ -29,9 +29,7 @@ clickableDiv.addEventListener("click", function(event) {
         circle.style.position = "absolute";
         circle.style.left = x - 50 + "px";
         circle.style.top = y - 50 + "px";
-
-        if (y<500) {
-            document.body.appendChild(circle);
-        }
+        
+        document.body.appendChild(circle);
     });
 });
