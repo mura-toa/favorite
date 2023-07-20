@@ -11,8 +11,6 @@ const color = randomcolor;
 var clickableDiv = document.querySelector(".splatoon");
   
 clickableDiv.addEventListener("click", function(event) {
-    var x = event.clientX;
-    var y = event.clientY;
     var circle = document.createElement("div");
     var min = 60;
     var max = 80;
@@ -24,8 +22,8 @@ clickableDiv.addEventListener("click", function(event) {
     circle.style.borderRadius = "50%";
     circle.style.backgroundColor = color;
     circle.style.position = "absolute";
-    circle.style.left = x - 50 + "px";
-    circle.style.top = y - 50 + "px";
+    circle.style.left = event.pageX - 50 + "px";
+    circle.style.top = event.pageY - 50 + "px";
 
-    document.splatoon.appendChild(circle);
+    document.body.appendChild(circle);
 });
